@@ -1,1 +1,17 @@
 Hello
+
+
+
+
+<% if user_signed_in? %>
+    <%=" #{@name.id}     #{@name.username} "  %>
+
+<%=link_to 'sign out', destroy_user_session_path, method: :delete %>
+
+<%else  %>
+    <%=link_to 'sign in', users_sign_in_path%>
+    <%=link_to 'sign up', new_user_registration_path%>
+
+<% end %>
+
+

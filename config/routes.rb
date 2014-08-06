@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
+    # Tell the router to use this controller:
+    # devise_for :admins, controllers: { sessions: "admins/sessions" }
   devise_for :users
+
+  get 'users/sign_in' => 'devise/sessions#new'
     root 'main#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
